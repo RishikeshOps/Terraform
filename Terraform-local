@@ -1,0 +1,15 @@
+resource "local_file" "devops"{
+  filename = "/home/ubuntu/terraform/terraform-local/rishi_auto.txt"
+  content = "i want to become devops engineer"
+}
+
+
+resource "random_string" "string_rsndom"{
+length = 16
+special = true
+override_special = "!@#$%^&*()_-{}<>:?+"
+}
+
+output "string_rsndom" {
+value = random_string.string_rsndom[*].result
+}
