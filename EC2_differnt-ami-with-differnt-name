@@ -1,0 +1,26 @@
+terraform {
+        required_providers {
+        aws = {
+        source = "hashicorp/aws"
+        version = "~> 4.16"
+}
+}
+        required_version = ">= 1.2.0"
+}
+        provider "aws" {
+        region = "us-east-1"
+}
+
+locals {
+        instances = {"Rishi":"ami-0574da719dca65348","vaibhav":"ami-0b0dcb5067f052a63","nihal":"ami-0574da719dca65348","rohit":"ami-0b0dcb5067f052a63"}
+}
+
+
+resource "aws_instance" "web" {
+        for_each = local.instances
+        ami = each.value
+        instance_type = "t2.micro"
+        tags = {
+                Name = each.key
+}
+}
