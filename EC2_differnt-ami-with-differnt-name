@@ -12,7 +12,7 @@ terraform {
 }
 
 locals {
-        instances = {"Rishi":"ami-0574da719dca65348","vaibhav":"ami-0b0dcb5067f052a63","nihal":"ami-0574da719dca65348","rohit":"ami-0b0dcb5067f052a63"}
+        instances = {"Dev":"ami-0574da719dca65348","Steging":"ami-0b0dcb5067f052a63","Testing":"ami-0574da719dca65348","Prod":"ami-0b0dcb5067f052a63"}
 }
 
 
